@@ -1,0 +1,31 @@
+Files to turn in : ft_ultimate_div_mod.c
+
+Allowed functions : None
+
+• Create a function ft_ultimate_div_mod with the following prototype :
+
+void ft_ultimate_div_mod(int *a, int *b);
+
+• This function divides parameters a by b. The result of this division is stored in the
+
+int pointed by a. The remainder of the division is stored in the int pointed by b.
+
+Here's the implementation of the `ft_ultimate_div_mod` function that performs division on two integers and stores the results in the provided pointers:
+
+```c
+
+void ft_ultimate_div_mod(int *a, int *b) {
+
+    int temp = *a; // Store the value of a
+
+    *a = temp / *b; // Perform division and update the value of a
+
+    *b = temp % *b; // Calculate remainder and update the value of b
+
+}
+
+```
+
+In this function, `a` and `b` are pointers to integers representing the addresses of two integer variables. The value of `*a` (the value at the address pointed by `a`) is stored in a temporary variable `temp`. Then, we perform the division `temp / *b` and store the result in `*a`, updating the value of `a` with the division result. Lastly, we calculate the remainder `temp % *b` and store it in `*b`, updating the value of `b` with the remainder.
+
+You can include this code in the `ft_ultimate_div_mod.c` file and compile it with your program to test the `ft_ultimate_div_mod` function. Remember to include any necessary headers and a main function to test the code.
