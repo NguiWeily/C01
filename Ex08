@@ -1,0 +1,35 @@
+Files to turn in : ft_sort_int_tab.c
+Allowed functions : None
+• Create a function which sorts an array of integers by ascending order.
+• The arguments are a pointer to int and the number of ints in the array.
+• Here’s how it should be prototyped :
+void ft_sort_int_tab(int *tab, int size);
+
+Here's the implementation of the `ft_sort_int_tab` function that sorts an array of integers in ascending order:
+
+```c
+void ft_sort_int_tab(int *tab, int size) {
+    int i, j, temp;
+
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - 1 - i; j++) {
+            if (tab[j] > tab[j + 1]) {
+                // Swap the elements if they are out of order
+                temp = tab[j];
+                tab[j] = tab[j + 1];
+                tab[j + 1] = temp;
+            }
+        }
+    }
+}
+```
+
+In this function, `tab` is a pointer to the integer array that we want to sort, and `size` represents the number of integers in the array. We use a nested `for` loop to iterate through the array and compare adjacent elements.
+
+The outer loop iterates `i` from 0 to `size - 1`. On each iteration of the outer loop, the inner loop iterates `j` from 0 to `size - 1 - i`. This ensures that the largest element is moved to its correct position in each iteration of the outer loop.
+
+Inside the inner loop, we compare `tab[j]` with `tab[j + 1]`. If `tab[j]` is greater than `tab[j + 1]`, we swap the elements using a temporary variable `temp`. This way, the larger element "bubbles" up towards the end of the array.
+
+By repeating this process for each element of the array, the entire array gets sorted in ascending order.
+
+You can include this code in the `ft_sort_int_tab.c` file and compile it with your program. Remember to include a main function to test the `ft_sort_int_tab` function.
