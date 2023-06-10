@@ -1,0 +1,27 @@
+Files to turn in : ft_ft.c
+
+Allowed functions : None
+
+• Create a function that takes a pointer to int as a parameter, and sets the value "42"
+
+to that int.
+
+• Here’s how it should be prototyped :
+
+void ft_ft(int *nbr);
+
+Here's the implementation of the `ft_ft` function that sets the value of an integer to 42 using a pointer:
+
+```c
+
+void ft_ft(int *nbr) {
+
+    *nbr = 42;
+
+}
+
+```
+
+In this function, `nbr` is a pointer to an integer. By dereferencing the pointer using the `*` operator, we can access the actual integer variable it points to. Assigning the value 42 to `*nbr` updates the value of the integer variable passed to the function.
+
+You can include this code in the `ft_ft.c` file and compile it with your program to test the `ft_ft` function. Remember to include any necessary headers and a main function to test the code.
