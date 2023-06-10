@@ -1,0 +1,29 @@
+Files to turn in : ft_div_mod.c
+
+Allowed functions : None
+
+• Create a function ft_div_mod prototyped like this :
+
+void ft_div_mod(int a, int b, int *div, int *mod);
+
+• This function divides parameters a by b and stores the result in the int pointed by
+
+div. It also stores the remainder of the division of a by b in the int pointed by mod.
+
+Here's the implementation of the `ft_div_mod` function that performs division and modulus operation on two integers and stores the results in the provided pointers:
+
+```c
+
+void ft_div_mod(int a, int b, int *div, int *mod) {
+
+    *div = a / b;
+
+    *mod = a % b;
+
+}
+
+```
+
+In this function, `a` and `b` are the input integers, and `div` and `mod` are pointers to integers where the division result and remainder will be stored, respectively. By performing `a / b`, we obtain the integer division result, which is then assigned to `*div` (the value pointed by `div`). Similarly, the modulus operation `a % b` calculates the remainder, which is assigned to `*mod` (the value pointed by `mod`).
+
+You can include this code in the `ft_div_mod.c` file and compile it with your program to test the `ft_div_mod` function. Remember to include any necessary headers and a main function to test the code.
