@@ -1,35 +1,62 @@
+Chapter XI
+Exercise 08 : ft_sort_int_tab
+Exercise 08
+ft_sort_int_tab
+Turn-in directory : ex08/
 Files to turn in : ft_sort_int_tab.c
 Allowed functions : None
 • Create a function which sorts an array of integers by ascending order.
 • The arguments are a pointer to int and the number of ints in the array.
 • Here’s how it should be prototyped :
-void ft_sort_int_tab(int *tab, int size);
+void
+ft_sort_int_tab(int *tab, int size);
 
-Here's the implementation of the `ft_sort_int_tab` function that sorts an array of integers in ascending order:
+#include <stdio.h>
 
-```c
-void ft_sort_int_tab(int *tab, int size) {
-    int i, j, temp;
+void ft_sort_int_tab(int *tab, int size)
+{
+        int i, j, min_idx;
 
-    for (i = 0; i < size - 1; i++) {
-        for (j = 0; j < size - 1 - i; j++) {
-            if (tab[j] > tab[j + 1]) {
-                // Swap the elements if they are out of order
-                temp = tab[j];
-                tab[j] = tab[j + 1];
-                tab[j + 1] = temp;
-            }
+        i = 0;
+        while (i < size - 1)
+        {
+                min_idx = i;
+                j = i + 1;
+                while (j < size)
+                {
+                        if (tab[j] < tab[min_idx])
+                                min_idx = j;
+                        j++;
+                }
+
+                if (min_idx != i)
+                {
+                        int temp = tab[i];
+                        tab[i] = tab[min_idx];
+                        tab[min_idx] = temp;
+                }
+
+                i++;
         }
-    }
 }
-```
 
-In this function, `tab` is a pointer to the integer array that we want to sort, and `size` represents the number of integers in the array. We use a nested `for` loop to iterate through the array and compare adjacent elements.
+int main(void)
+{
+        int tab[] = {5, 2, 9, 1, 7};
+        int size = sizeof(tab) / sizeof(tab[0]);
+        int i;
 
-The outer loop iterates `i` from 0 to `size - 1`. On each iteration of the outer loop, the inner loop iterates `j` from 0 to `size - 1 - i`. This ensures that the largest element is moved to its correct position in each iteration of the outer loop.
+        printf("Before sorting: ");
+        for (i = 0; i < size; i++)
+                printf("%d ", tab[i]);
+        printf("\n");
 
-Inside the inner loop, we compare `tab[j]` with `tab[j + 1]`. If `tab[j]` is greater than `tab[j + 1]`, we swap the elements using a temporary variable `temp`. This way, the larger element "bubbles" up towards the end of the array.
+        ft_sort_int_tab(tab, size);
 
-By repeating this process for each element of the array, the entire array gets sorted in ascending order.
+        printf("After sorting: ");
+        for (i = 0; i < size; i++)
+                printf("%d ", tab[i]);
+        printf("\n");
 
-You can include this code in the `ft_sort_int_tab.c` file and compile it with your program. Remember to include a main function to test the `ft_sort_int_tab` function.
+        return 0;
+}
