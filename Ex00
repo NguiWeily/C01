@@ -1,27 +1,43 @@
+User
+Chapter III
+Exercise 00 : ft_ft
+Exercise 00
+ft_ft
+Turn-in directory : ex00/
 Files to turn in : ft_ft.c
-
 Allowed functions : None
-
 • Create a function that takes a pointer to int as a parameter, and sets the value "42"
-
 to that int.
-
 • Here’s how it should be prototyped :
+void
+ft_ft(int *nbr); and create main test inside same file and comply norminette and dont use for and function as short as possible and separate line for declare variable with assign value
+To complete Exercise 00 and create the `ft_ft` function along with the main test code inside the same file while complying with the norminette requirements, follow these steps:
 
-void ft_ft(int *nbr);
+1. Create a new file called `ft_ft.c` in the `ex00/` directory of your project.
 
-Here's the implementation of the `ft_ft` function that sets the value of an integer to 42 using a pointer:
+2. Open the `ft_ft.c` file and define the `ft_ft` function according to the given prototype:
 
 ```c
-
-void ft_ft(int *nbr) {
-
-    *nbr = 42;
-
+void ft_ft(int *nbr)
+{
+	*nbr = 42;
 }
 
+int main(void)
+{
+	int num;
+	int *ptr = &num;
+
+	ft_ft(ptr);
+	printf("%d\n", num); // Output: 42
+	return 0;
+}
 ```
 
-In this function, `nbr` is a pointer to an integer. By dereferencing the pointer using the `*` operator, we can access the actual integer variable it points to. Assigning the value 42 to `*nbr` updates the value of the integer variable passed to the function.
+The `ft_ft` function takes a pointer to an `int` as a parameter and sets the value pointed to by `nbr` to 42. The main test code is also included inside the same file. We declare an `int` variable `num` without assigning it a value. Then, we declare an `int` pointer `ptr` and initialize it with the address of `num` using the `&` operator. Next, we call `ft_ft` passing `ptr` as the argument. Finally, we print the value of `num` to verify that it has been set to 42.
 
-You can include this code in the `ft_ft.c` file and compile it with your program to test the `ft_ft` function. Remember to include any necessary headers and a main function to test the code.
+3. Make sure your code complies with the norminette requirements for coding style.
+
+4. Save the `ft_ft.c` file.
+
+Now you can turn in the `ft_ft.c` file located in the `ex00/` directory, which contains the implementation of the `ft_ft` function and the main test code.
