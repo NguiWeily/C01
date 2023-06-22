@@ -1,48 +1,54 @@
+Chapter X
+Exercise 07 : ft_rev_int_tab
+Exercise 07
+ft_rev_int_tab
+Turn-in directory : ex07/
 Files to turn in : ft_rev_int_tab.c
 Allowed functions : None
 • Create a function which reverses a given array of integer (first goes last, etc).
 • The arguments are a pointer to int and the number of ints in the array.
 • Here’s how it should be prototyped :
-void ft_rev_int_tab(int *tab, int size);
+void
+ft_rev_int_tab(int *tab, int size);
 
-Here's the implementation of the `ft_rev_int_tab` function that reverses an array of integers:
+#include <stdio.h>
 
-```c
+void ft_rev_int_tab(int *tab, int size)
+{
+        int start = 0;
+        int end = size - 1;
 
-void ft_rev_int_tab(int *tab, int size) {
+        while (start < end)
+        {
+                int temp = tab[start];
+                tab[start] = tab[end];
+                tab[end] = temp;
 
-    int start = 0;
-
-    int end = size - 1;
-
-    int temp;
-
-    while (start < end) {
-
-        // Swap the elements at start and end positions
-
-        temp = tab[start];
-
-        tab[start] = tab[end];
-
-        tab[end] = temp;
-
-        // Move the start and end positions towards the center
-
-        start++;
-
-        end--;
-
-    }
-
+                start++;
+                end--;
+        }
 }
 
-```
+int main(void)
+{
+        int tab[] = {1, 2, 3, 4, 5};
+        int size = sizeof(tab) / sizeof(tab[0]);
 
-In this function, `tab` is a pointer to the integer array that we want to reverse, and `size` represents the number of integers in the array. We use two variables, `start` and `end`, to keep track of the indices of the array elements we want to swap. Initially, `start` is set to 0 (the first index) and `end` is set to `size - 1` (the last index).
+        printf("Before reversal: ");
+        for (int i = 0; i < size; i++)
+        {
+                printf("%d ", tab[i]);
+        }
+        printf("\n");
 
-We then enter a `while` loop that continues until `start` becomes greater than or equal to `end`. Inside the loop, we swap the elements at the `start` and `end` positions using a temporary variable `temp`. After the swap, we increment `start` and decrement `end`, effectively moving towards the center of the array.
+        ft_rev_int_tab(tab, size);
 
-By swapping elements from both ends towards the middle, we reverse the order of the array.
+        printf("After reversal: ");
+        for (int i = 0; i < size; i++)
+        {
+                printf("%d ", tab[i]);
+        }
+        printf("\n");
 
-You can include this code in the `ft_rev_int_tab.c` file and compile it with your program. Remember to include a main function to test the `ft_rev_int_tab` function.
+        return 0;
+}
