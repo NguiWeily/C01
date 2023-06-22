@@ -1,28 +1,33 @@
+Chapter VIII
+Exercise 05 : ft_putstr
+Exercise 05
+ft_putstr
+Turn-in directory : ex05/
 Files to turn in : ft_putstr.c
-
 Allowed functions : write
-
 • Create a function that displays a string of characters on the standard output.
-
 • Here’s how it should be prototyped :
+void
+ft_putstr(char *str);
 
-void ft_putstr(char *str);
+#include <unistd.h>
 
-Here's the implementation of the `ft_putstr` function that displays a string of characters on the standard output:
+void ft_putstr(char *str)
+{
+	int i = 0;
 
-```c
-#include <unistd.h> // Include the necessary header for the write function
-
-void ft_putstr(char *str) {
-    int i = 0;
-
-    while (str[i] != '\0') { // Loop until the end of the string
-        write(1, &str[i], 1); // Write each character to the standard output
-        i++;
-    }
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }
-```
 
-In this function, `str` is a pointer to the character array (string) that we want to display. We iterate over the characters in the string using a `while` loop and write each character to the standard output using the `write` function from the `<unistd.h>` header. The third argument of `write` is set to 1 to indicate that we want to write one character at a time.
+int main(void)
+{
+	char *str = "Hello, world!";
 
-You can include this code in the `ft_putstr.c` file and compile it with your program. Remember to include the `<unistd.h>` header and a main function to test the `ft_putstr` function.
+	ft_putstr(str);
+
+	return 0;
+}
