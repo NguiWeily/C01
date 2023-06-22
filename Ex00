@@ -9,32 +9,20 @@ Allowed functions : None
 to that int.
 • Here’s how it should be prototyped :
 void
-ft_ft(int *nbr); and create main test same file and comply norminette and dont use for and function as short as possible
-To complete Exercise 00 and create the `ft_ft` function along with the main test code inside the same file, while complying with the norminette requirements and keeping the function as short as possible, follow these steps:
+ft_ft(int *nbr);
 
-1. Create a new file called `ft_ft.c` in the `ex00/` directory of your project.
+#include <stdio.h>
 
-2. Open the `ft_ft.c` file and define the `ft_ft` function according to the given prototype:
-
-```c
-void ft_ft(int *nbr)
+void	ft_ft(int *nbr)
 {
 	*nbr = 42;
 }
-
-int main(void)
+/*
+int	main(void)
 {
-	int num;
+	int	num;
+
 	ft_ft(&num);
-	printf("%d\n", num); // Output: 42
-	return 0;
-}
-```
-
-The `ft_ft` function takes a pointer to an `int` as a parameter and sets the value pointed to by `nbr` to 42. The main test code is also included inside the same file. We declare an `int` variable `num` and pass its address (`&num`) to the `ft_ft` function. Finally, we print the value of `num` to verify that it has been set to 42.
-
-3. Make sure your code complies with the norminette requirements for coding style.
-
-4. Save the `ft_ft.c` file.
-
-Now you can turn in the `ft_ft.c` file located in the `ex00/` directory, which contains the implementation of the `ft_ft` function and the main test code.
+	printf("%d\n", num);
+	return (0);
+}*/
